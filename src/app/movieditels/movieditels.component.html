@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-3">
+        <img class="w-100" style="height: 500px;" [src]="imgPrefix + movieDetals.poster_path" alt="">
+    </div>
+    <div class="col-md-9">
+        <div class="d-flex align-items-center">
+            <h2 class="fw-bolder">{{movieDetals.name}}{{movieDetals.title}}</h2>
+            <h5 class="text-info ms-4">{{movieDetals.vote_average | number :"1.1-1"}}</h5>
+        </div>
+        <p class="text-secondary">{{movieDetals.overview}}</p>
+        <h5>genres:</h5>
+        <ul class="d-flex p-0">
+            <li *ngFor="let g of movieDetals.genres">{{g.name + "-"}}</li>
+        </ul>
+        <div class="row">
+            <h4>Most Veiws: </h4>
+            <div *ngFor="let movie of mostVeiw" class="col-md-2">
+                <div class="movies">
+                    <a [routerLink]="['/moviedetals',movie.id]">
+                        <img class="w-100" [src]="imgPrefix + movie.poster_path" alt="">
+                        <h3 class=" h6">{{movie.title}}</h3>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>

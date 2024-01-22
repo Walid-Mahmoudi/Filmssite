@@ -1,0 +1,13 @@
+<div class="row">
+    <div *ngFor="let tv of tv" class="col-md-2">
+        <div class="Tv position-relative">
+            <a [routerLink]="['/moviedetals',tv.id]">
+                <img class="w-100" [src]="imgPrefix + tv.poster_path" alt="">
+                <h3 class=" h6">{{tv.name}}</h3>
+                <div class="vote p-2 position-absolute top-0 end-0 bg-lights">{{tv.vote_average| number : '1.1-1'}}
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>

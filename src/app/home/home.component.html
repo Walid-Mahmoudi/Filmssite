@@ -1,0 +1,50 @@
+<div class="row py-4">
+    <div class="col-md-4">
+        <div class="line w-25"></div>
+        <h1>Trending Movies<br> To Watch Now</h1>
+        <p>Most Watched Movies by Days</p>
+        <div class="line w-100 mt-4"></div>
+    </div>
+    <div *ngFor="let movie of trendingMovies" class="col-md-2">
+        <div class="movies position-relative">
+            <a [routerLink]="['/moviedetals',movie.id]">
+                <img class="w-100" [src]="imgPrefix + movie.poster_path" alt="">
+                <h3 class=" h6">{{movie.title}}</h3>
+                <div class="vote bg-lights">{{movie.vote_average| number : '1.1-1'}}</div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<div class="row py-4">
+    <div class="col-md-4">
+        <div class="line w-25"></div>
+        <h1>Trending Tv<br> To Watch Now</h1>
+        <p>Most Watched Tv by Days</p>
+        <div class="line w-100 mt-4"></div>
+    </div>
+    <div *ngFor="let tv of trendingTv" class="col-md-2">
+        <div class="Tv position-relative">
+            <a [routerLink]="['/moviedetals',tv.id]">
+                <img class="w-100" [src]="imgPrefix + tv.poster_path" alt="">
+                <h3 class=" h6">{{tv.name}}</h3>
+                <div class="vote bg-lights">{{tv.vote_average| number : '1.1-1'}}</div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<div class="row py-4">
+    <div class="col-md-4">
+        <div class="line w-25"></div>
+        <h1>Trending Pepole<br> To Watch Now</h1>
+        <p>Most Watched Pepole by Days</p>
+        <div class="line w-100 mt-4"></div>
+    </div>
+    <div *ngFor="let pepole of trendingPepole" class="col-md-2">
+        <div class="Pepole position-relative">
+            <img class="w-100" [src]="imgPrefix + pepole.profile_path" alt="">
+            <h3 class=" h6">{{pepole.name}}</h3>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Filmogy</a> -->
+        <img src="assets/logo.png" alt="" style="width: 120px;">
+        <!-- <h3>Filmogy</h3> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/movies">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/tv">Tv</a>
+                </li>
+                <li class="nav-item">
+                    <a *ngIf="isLogin" class="nav-link" routerLink="/contact">Contacts</a>
+                </li>
+            </ul>
+            <div class="d-flex alin-items-center">
+                <div class="p-2">
+                    <a class="mx-2" href=""><i class="fa-brands fa-square-facebook"></i></a>
+                    <a class="mx-2" href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="mx-2" href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a class="mx-2" href=""><i class="fa-brands fa-square-youtube"></i></a>
+                </div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a *ngIf="!isLogin" class="nav-link" routerLink="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a *ngIf="!isLogin" class="nav-link" routerLink="/register">Rigester</a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="callLogout()" *ngIf="isLogin" class="nav-link" routerLink="/">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
